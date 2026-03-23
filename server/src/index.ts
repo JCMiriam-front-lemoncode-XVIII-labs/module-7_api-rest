@@ -117,7 +117,7 @@ app.get('/api/episode', async (context) => {
   const nameParam = context.req.query('name') ?? '';
 
   const page = Number(pageParam) > 0 ? Number(pageParam) : 1;
-  const pageSize = 2;
+  const pageSize = 3;
 
   const filteredEpisodes = db.episodes.filter((episode) =>
     episode.name.toLowerCase().includes(nameParam.toLowerCase())
