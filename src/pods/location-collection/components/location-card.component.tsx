@@ -1,12 +1,8 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import EditIcon from '@mui/icons-material/Edit';
 import { LocationEntityVm } from '../location-collection.vm';
-import * as classes from './location-card.styles';
 
 interface Props {
   location: LocationEntityVm;
