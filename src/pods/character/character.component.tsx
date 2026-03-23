@@ -11,22 +11,29 @@ interface Props {
   onSave: (character: Character) => void;
 }
 
-export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onSave } = props;
-
+export const CharacterComponent: React.FunctionComponent<Props> = ({
+  character,
+  onSave,
+}) => {
   return (
     <Formik
-      onSubmit={onSave}
       initialValues={character}
-      enableReinitialize={true}
+      enableReinitialize
       validate={formValidation.validateForm}
+      onSubmit={onSave}
     >
       {() => (
         <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" disabled />
+          <div className={classes.header}>
+            <div className={classes.imageWrapper}>
+              <img src={character.image} alt={character.name} className={classes.image} />
+            </div>
+
+            <TextFieldComponent name="name" label="Name" disabled />
+          </div>
+
           <TextFieldComponent name="status" label="Status" disabled />
           <TextFieldComponent name="species" label="Species" disabled />
-          <TextFieldComponent name="type" label="Type" disabled />
           <TextFieldComponent name="gender" label="Gender" disabled />
           <TextFieldComponent name="origin" label="Origin" disabled />
           <TextFieldComponent name="location" label="Location" disabled />
@@ -34,7 +41,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           <TextFieldComponent
             name="bestSentence"
             label="Best sentence"
-            multiline={true}
+            multiline
             rows={4}
           />
 
