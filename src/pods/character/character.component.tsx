@@ -26,7 +26,9 @@ export const CharacterComponent: React.FunctionComponent<Props> = ({
         <Form className={classes.root}>
           <div className={classes.header}>
             <div className={classes.imageWrapper}>
-              <img src={character.image} alt={character.name} className={classes.image} />
+              {character.image ? (
+                <img src={character.image} alt={character.name} className={classes.image} />
+              ) : null}
             </div>
 
             <TextFieldComponent name="name" label="Name" disabled />
