@@ -29,17 +29,23 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
       <CardContent>
         <div className={classes.content}>
           <CardMedia
+            className={classes.image}
             image={character.image}
             title={character.name}
             style={{ height: 0, paddingTop: '56.25%' }}
           />
-          <Typography variant="subtitle1" gutterBottom>
-            Gender: {character.gender}
-          </Typography>
-          <Typography variant="body2">
-            Origin: {character.origin}
-          </Typography>
+          
+          <div className={classes.pillsContainer}>
+            <Typography className={classes.typography} variant="body2" >
+              {character.gender}
+            </Typography>
+            <Typography className={classes.typography} variant="body2">
+              {character.origin}
+            </Typography>
+          </div>
         </div>
+
+        <Typography variant="body2" >{character.bestSentence}</Typography>
       </CardContent>
       <CardActions>
         <IconButton onClick={() => onEdit(character.id)}>

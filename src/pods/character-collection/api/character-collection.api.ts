@@ -3,8 +3,10 @@ import {
   CharacterCollectionResponseApi,
 } from './character-collection.api-model';
 
+const url = 'http://localhost:3000/api/character';
+
 export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> => {
-  const response = await fetch('https://rickandmortyapi.com/api/character');
+  const response = await fetch(url);
 
   if (!response.ok) {
     throw new Error('Error loading character collection');

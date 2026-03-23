@@ -6,4 +6,5 @@ export interface CharacterEntityVm {
   species: string;
   gender: string;
   origin: string;
+  bestSentence: string;
 }
