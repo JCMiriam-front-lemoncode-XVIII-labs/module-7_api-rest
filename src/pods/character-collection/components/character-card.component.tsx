@@ -20,33 +20,39 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
   const { character, onEdit } = props;
 
   return (
-    <Card>
-      <CardHeader
-        avatar={<Avatar aria-label="Character">{character.name.charAt(0)}</Avatar>}
-        title={character.name}
-        subheader={`${character.status} - ${character.species}`}
-      />
-      <CardContent>
-        <div className={classes.content}>
-          <CardMedia
-            className={classes.image}
-            image={character.image}
-            title={character.name}
-            style={{ height: 0, paddingTop: '56.25%' }}
-          />
-          
-          <div className={classes.pillsContainer}>
-            <Typography className={classes.typography} variant="body2" >
-              {character.gender}
-            </Typography>
-            <Typography className={classes.typography} variant="body2">
-              {character.origin}
-            </Typography>
+    <Card className={classes.card}>
+      <div>
+        <CardHeader
+          avatar={<Avatar aria-label="Character">{character.name.charAt(0)}</Avatar>}
+          title={character.name}
+          subheader={`${character.status} - ${character.species}`}
+        />
+        <CardContent>
+          <div className={classes.content}>
+            <CardMedia
+              className={classes.image}
+              image={character.image}
+              title={character.name}
+              style={{ height: 0, paddingTop: '56.25%' }}
+            />
+            
+            <div className={classes.pillsContainer}>
+              <Typography className={classes.typography} variant="body2" >
+                {character.gender}
+              </Typography>
+              <Typography className={classes.typography} variant="body2">
+                {character.origin}
+              </Typography>
+            </div>
           </div>
-        </div>
 
-        <Typography variant="body2" >{character.bestSentence}</Typography>
-      </CardContent>
+          {character.bestSentence ? (
+            <Typography className={classes.bestSentence} variant="body2" >"{character.bestSentence}"</Typography>
+          ) : null}
+          
+        </CardContent>
+      </div>
+
       <CardActions>
         <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />

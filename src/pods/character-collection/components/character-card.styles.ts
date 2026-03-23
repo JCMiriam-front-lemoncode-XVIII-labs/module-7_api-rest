@@ -1,5 +1,12 @@
 import { css } from '@emotion/css';
 
+export const card = css`
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const content = css`
   display: flex;
   flex-direction: column;
@@ -29,4 +36,9 @@ export const typography = css`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const bestSentence = css`
+  padding-top: 1rem;
+  font-style: italic;
 `;
