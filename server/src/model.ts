@@ -29,3 +29,40 @@ export interface CharacterListResponse {
   };
   results: Character[];
 }
+
+export interface Location {
+  id: number;
+  name: string;
+  type: string;
+  dimension: string;
+  residents: string[];
+  url: string;
+  created: string;
+}
+
+export interface Episode {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+}
+
+export interface LocationListResponse {
+  info: {
+    count: number;
+    pages: number;
+    next: number | null;
+    prev: number | null;
+  };
+  results: Location[];
+}
+
+export interface EpisodeListResponse {
+  info: {
+    count: number;
+    pages: number;
+    next: number | null;
+    prev: number | null;
+  };
+  results: Episode[];
+}
