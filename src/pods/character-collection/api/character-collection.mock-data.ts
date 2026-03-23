@@ -6,7 +6,6 @@ export const mockCharacterCollection: CharacterEntityApi[] = [
     name: 'Rick Sanchez',
     status: 'Alive',
     species: 'Human',
-    type: '',
     gender: 'Male',
     origin: {
       name: 'Earth (C-137)',
@@ -30,7 +29,6 @@ export const mockCharacterCollection: CharacterEntityApi[] = [
     name: 'Morty Smith',
     status: 'Alive',
     species: 'Human',
-    type: '',
     gender: 'Male',
     origin: {
       name: 'unknown',

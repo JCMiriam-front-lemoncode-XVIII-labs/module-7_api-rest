@@ -15,11 +15,33 @@ app.use(logger());
 app.use('/api/*', cors());
 
 app.get('/api/character', async (context) => {
+  const pageParam = context.req.query('page');
+  const nameParam = context.req.query('name') ?? '';
+
+  const page = Number(pageParam) > 0 ? Number(pageParam) : 1;
+  const pageSize = 3;
+
+  const filteredCharacters = db.characters.filter((character) =>
+    character.name.toLowerCase().includes(nameParam.toLowerCase())
+  );
+
+  const count = filteredCharacters.length;
+  const pages = Math.ceil(count / pageSize) || 1;
+  const safePage = Math.min(page, pages);
+
+  const start = (safePage - 1) * pageSize;
+  const end = start + pageSize;
+
+  const paginatedCharacters = filteredCharacters.slice(start, end);
+
   const response: CharacterListResponse = {
     info: {
-      count: db.characters.length,
+      count,
+      pages,
+      next: safePage < pages ? safePage + 1 : null,
+      prev: safePage > 1 ? safePage - 1 : null,
     },
-    results: db.characters,
+    results: paginatedCharacters,
   };
   return context.json(response);
 });

@@ -1,9 +1,9 @@
 export interface CharacterEntityApi {
   id: number;
+  image: string;
   name: string;
   status: string;
   species: string;
-  type: string;
   gender: string;
   origin: {
     name: string;
@@ -13,7 +13,6 @@ export interface CharacterEntityApi {
     name: string;
     url: string;
   };
-  image: string;
   episode: string[];
   url: string;
   created: string;
@@ -24,8 +23,8 @@ export interface CharacterCollectionResponseApi {
   info: {
     count: number;
     pages: number;
-    next: string | null;
-    prev: string | null;
+    next: number | null;
+    prev: number | null;
   };
   results: CharacterEntityApi[];
 }
