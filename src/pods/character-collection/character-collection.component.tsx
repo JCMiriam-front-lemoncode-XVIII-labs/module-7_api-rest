@@ -33,6 +33,15 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
 
   return (
     <div className={classes.root}>
+      <div style={{ marginBottom: '1rem' }}>
+        <TextField
+          fullWidth
+          label="Search character"
+          value={search}
+          onChange={(e) => onSearch(e.target.value)}
+        />
+      </div>
+
       <ul className={classes.list}>
         {characterCollection.map((character) => (
           <li key={character.id}>
