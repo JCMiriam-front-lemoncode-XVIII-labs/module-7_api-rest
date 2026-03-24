@@ -1,2 +1,4 @@
-export * from './hotel-collection.scene';
-export * from './hotel.scene';
+export * from './character-collection.scene';
+export * from './episode-collection.scene';
+export * from './location-collection.scene';
+export * from './character.scene';

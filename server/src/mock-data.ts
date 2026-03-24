@@ -1,5 +1,4 @@
-import { Character } from "./model.js";
-
+import { Character, Location, Episode } from './model.js';
 
 export const characters: Character[] = [
   {
@@ -332,4 +331,74 @@ export const characters: Character[] = [
     url: 'https://rickandmortyapi.com/api/character/5',
     created: '2017-11-04T19:26:56.301Z',
   },
+];
+
+export const locations: Location[] = [
+  {
+    id: 1,
+    name: 'Earth (C-137)',
+    type: 'Planet',
+    dimension: 'Dimension C-137',
+    residents: [
+      'https://rickandmortyapi.com/api/character/1',
+      'https://rickandmortyapi.com/api/character/2',
+    ],
+    url: 'https://rickandmortyapi.com/api/location/1',
+    created: '2017-11-10T12:42:04.162Z',
+  },
+  {
+    id: 2,
+    name: 'Abadango',
+    type: 'Cluster',
+    dimension: 'unknown',
+    residents: [
+      'https://rickandmortyapi.com/api/character/6',
+    ],
+    url: 'https://rickandmortyapi.com/api/location/2',
+    created: '2017-11-10T13:06:38.182Z',
+  },
+  {
+    id: 3,
+    name: 'Citadel of Ricks',
+    type: 'Space station',
+    dimension: 'unknown',
+    residents: [
+      'https://rickandmortyapi.com/api/character/8',
+      'https://rickandmortyapi.com/api/character/14',
+      'https://rickandmortyapi.com/api/character/15',
+    ],
+    url: 'https://rickandmortyapi.com/api/location/3',
+    created: '2017-11-10T13:08:13.191Z',
+  },
+  {
+    id: 4,
+    name: "Worldender's lair",
+    type: 'Planet',
+    dimension: 'unknown',
+    residents: [
+      'https://rickandmortyapi.com/api/character/10',
+    ],
+    url: 'https://rickandmortyapi.com/api/location/4',
+    created: '2017-11-10T13:08:20.569Z',
+  },
+  {
+    id: 5,
+    name: 'Anatomy Park',
+    type: 'Microverse',
+    dimension: 'Dimension C-137',
+    residents: [
+      'https://rickandmortyapi.com/api/character/12',
+      'https://rickandmortyapi.com/api/character/13',
+    ],
+    url: 'https://rickandmortyapi.com/api/location/5',
+    created: '2017-11-10T13:08:46.060Z',
+  },
+];
+
+export const episodes: Episode[] = [
+  { id: 1, name: 'Pilot', air_date: 'December 2, 2013', episode: 'S01E01' },
+  { id: 2, name: 'Lawnmower Dog', air_date: 'December 9, 2013', episode: 'S01E02' },
+  { id: 3, name: 'Anatomy Park', air_date: 'December 16, 2013', episode: 'S01E03' },
+  { id: 4, name: 'M. Night Shaym-Aliens!', air_date: 'January 13, 2014', episode: 'S01E04' },
+  { id: 5, name: 'Meeseeks and Destroy', air_date: 'January 20, 2014', episode: 'S01E05' },
 ];
